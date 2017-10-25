@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>par_entity</parentName>
+  <parentName>obj_player</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,21 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Variables
-grav = 0.32;
-jumpspeed = 5;
-movespeed = 1.50;
-ledgespeedv = 3
-ledgespeedh = 3
-skin = 0 //0 = default testing
-height = 50
-animation_system_create()
+            <string>event_inherited()
+set_mask_ext(spr_mask_2x2,100,20)
+jumpspeed = 8;
+movespeed = 1.20;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,32 +51,16 @@ animation_system_create()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Animation
-animation_system_step()
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw Character
-animation_system_draw(x,y)
+            <string>///Control Input
+
+if x &lt; obj_client_player.x - 100
+    c_right[0] = true
+if x &gt; obj_client_player.x + 100
+    c_left[0] = true
+if y &gt; obj_client_player.y+4
+    c_jump[0] = true
+
+event_inherited()
 </string>
           </argument>
         </arguments>

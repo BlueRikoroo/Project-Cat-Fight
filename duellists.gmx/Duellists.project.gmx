@@ -18,7 +18,8 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_jerkolantern</sprite>
-    <sprite>sprites\spr_ogcat_mask</sprite>
+    <sprite>sprites\spr_mask_default</sprite>
+    <sprite>sprites\spr_mask_2x2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -44,6 +45,8 @@
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_AUTOWALL_AddTile.gml</script>
     <script>scripts\scr_AUTOWALL.gml</script>
+    <script>scripts\set_mask_ext.gml</script>
+    <script>scripts\controls_b_left.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\GMS</object>
@@ -62,6 +65,11 @@
       <object>objects\obj_wall_t_oldstone</object>
       <object>objects\obj_wall_t_stone</object>
       <object>objects\obj_wall_t_wood</object>
+    </objects>
+    <objects name="AI">
+      <object>objects\obj_ai_1</object>
+      <object>objects\obj_ai_2</object>
+      <object>objects\obj_ai_3</object>
     </objects>
   </objects>
   <rooms name="rooms">
